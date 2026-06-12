@@ -7,7 +7,7 @@ const projects = [
     type: "Hotel Website",
     desc: "A stunning hotel website with room booking, gallery, and local attractions.",
     tech: ["Next.js", "Tailwind", "Vercel"],
-    img: "https://res.cloudinary.com/dbkrxzzv1/image/upload/q_auto/f_auto/v1781277054/yashraj_palace_tw1hej.webp",
+    img: "https://plus.unsplash.com/premium_photo-1661964071015-d97428970584?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG90ZWx8ZW58MHx8MHx8fDA%3D",
     large: true,
     website: "https://yashrajpalace.netlify.app/",
   },
@@ -16,7 +16,7 @@ const projects = [
     type: "Hotel Website",
     desc: "Modern hotel website with room details, booking form, and local attractions.",
     tech: ["React", "CSS", "Typescript"],
-    img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=500&fit=crop&auto=format",
+    img: "https://plus.unsplash.com/premium_photo-1661928260943-4aa36c5e1acc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGhvdGVsJTIwZnJvbnR8ZW58MHx8MHx8fDA%3D",
     large: false,
   },
   {
@@ -24,7 +24,7 @@ const projects = [
     type: "Demo Project",
     desc: "Local shop e-commerce with product catalog and WhatsApp order flow.",
     tech: ["HTML", "CSS", "JS"],
-    img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=250&fit=crop&auto=format",
+    img: "https://images.unsplash.com/photo-1570857502809-08184874388e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHNob3B8ZW58MHx8MHx8fDA%3D",
     large: false,
   },
 ];
