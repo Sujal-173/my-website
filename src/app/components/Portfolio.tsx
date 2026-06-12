@@ -30,7 +30,7 @@ const projects = [
 ];
 
 function ProjectCard({
-  project,
+project,
   delay,
 }: {
   project: (typeof projects)[0];
