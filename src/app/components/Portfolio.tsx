@@ -3,21 +3,21 @@ import { SectionLabel } from "./SectionLabel";
 
 const projects = [
   {
-    title: "Hotel Narmada Residency",
+    title: "Yashraj Palace",
     type: "Hotel Website",
     desc: "A stunning hotel website with room booking, gallery, and local attractions.",
     tech: ["Next.js", "Tailwind", "Vercel"],
-    img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=500&fit=crop&auto=format",
+    img: "https://res.cloudinary.com/dbkrxzzv1/image/upload/q_auto/f_auto/v1781277054/yashraj_palace_tw1hej.webp",
     large: true,
+    website: "https://yashrajpalace.netlify.app/",
   },
   {
-    title: "Yashraj Palace",
+    title: "Hotel Narmada Residency",
     type: "Hotel Website",
     desc: "Modern hotel website with room details, booking form, and local attractions.",
     tech: ["React", "CSS", "Typescript"],
-    img: "https://res.cloudinary.com/dbkrxzzv1/image/upload/q_auto/f_auto/v1781277054/yashraj_palace_tw1hej.webp",
+    img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=500&fit=crop&auto=format",
     large: false,
-    website: "https://yashrajpalace.netlify.app/",
   },
   {
     title: "Demo Shop Website",
@@ -30,7 +30,7 @@ const projects = [
 ];
 
 function ProjectCard({
-project,
+  project,
   delay,
 }: {
   project: (typeof projects)[0];
