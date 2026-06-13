@@ -1,14 +1,10 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
-import { Hero } from "./components/Hero";
-import { About } from "./components/About";
-import { Skills } from "./components/Skills";
-import { Services } from "./components/Services";
-import { Portfolio } from "./components/Portfolio";
-import { WhyMe } from "./components/WhyMe";
-import { Testimonials } from "./components/Testimonials";
-import { Contact } from "./components/Contact";
-import { Footer } from "./components/Footer";
-import { FloatingElements } from "./components/FloatingElements";
+import { ErrorBoundary } from "./components/ErrorBoundary";
+import Home from "../pages/Home";
+import Blog from "../pages/Blog";
+import BlogPost from "../pages/BlogPost";
+import NotFound from "../pages/NotFound";
 
 export default function App() {
   return (
@@ -20,17 +16,18 @@ export default function App() {
         overflowX: "hidden",
       }}
     >
-      <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Services />
-      <Portfolio />
-      <WhyMe />
-      <Testimonials />
-      <Contact />
-      <Footer />
-      <FloatingElements />
+      <BrowserRouter>
+        <ErrorBoundary>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+            {/* 404 catch-all */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </ErrorBoundary>
+      </BrowserRouter>
     </div>
   );
 }

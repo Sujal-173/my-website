@@ -58,14 +58,16 @@ export function Hero() {
               Freelance Web Developer · Indore, India
             </div>
 
-            {/* Headline */}
-            <div
+            {/* Headline — h1 for SEO heading hierarchy */}
+            <h1
               style={{
                 fontFamily: "'Playfair Display', serif",
                 lineHeight: 1.05,
+                margin: 0,
+                padding: 0,
               }}
             >
-              <motion.div
+              <motion.span
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
@@ -74,14 +76,16 @@ export function Hero() {
                   ease: [0.25, 0, 0, 1],
                 }}
                 style={{
+                  display: "block",
                   fontSize: "clamp(36px, 5vw, 64px)",
                   color: "#F0EDE8",
                   letterSpacing: "-0.03em",
+                  fontWeight: 700,
                 }}
               >
                 Websites that bring
-              </motion.div>
-              <motion.div
+              </motion.span>
+              <motion.span
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
@@ -90,14 +94,16 @@ export function Hero() {
                   ease: [0.25, 0, 0, 1],
                 }}
                 style={{
+                  display: "block",
                   fontSize: "clamp(36px, 5vw, 64px)",
                   color: "#F0EDE8",
                   fontStyle: "italic",
+                  fontWeight: 700,
                 }}
               >
                 customers to your door.
-              </motion.div>
-            </div>
+              </motion.span>
+            </h1>
 
             {/* Typewriter */}
             <motion.p
@@ -318,15 +324,7 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2.2, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute left-1/2 bottom-8 -translate-x-1/2 flex flex-col items-center gap-2"
-          style={{ color: "#64748B", fontFamily: "'Inter', sans-serif" }}
-        >
-        </motion.div>
+        {/* Duplicate scroll indicator removed — only one below is kept */}
       </div>
 
       {/* Scroll indicator */}

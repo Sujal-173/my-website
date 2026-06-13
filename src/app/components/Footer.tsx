@@ -1,12 +1,11 @@
 import { SiGithub, SiWhatsapp } from "react-icons/si";
 import { FaLinkedin } from "react-icons/fa";
+import { useScrollToSection } from "../../hooks/useScrollToSection";
 
 const navLinks = ["About", "Skills", "Work", "Services", "Contact"];
 
 export function Footer() {
-  const scrollTo = (id: string) => {
-    document.getElementById(id.toLowerCase())?.scrollIntoView({ behavior: "smooth" });
-  };
+  const scrollToSection = useScrollToSection();
 
   return (
     <footer
@@ -25,26 +24,29 @@ export function Footer() {
               style={{
                 fontSize: 20,
                 fontWeight: 700,
-                color: '#F0EDE8',
+                color: "#F0EDE8",
                 fontFamily: "'Playfair Display', serif",
               }}
             >
               Sujal.
             </span>
-            <span style={{ fontSize: 13, color: "#8C8984", fontFamily: "'DM Sans', sans-serif" }}>Freelance Web Developer</span>
+            <span style={{ fontSize: 13, color: "#8C8984", fontFamily: "'DM Sans', sans-serif" }}>
+              Freelance Web Developer
+            </span>
           </div>
 
           <div className="flex items-center gap-5">
             {[
-              { Icon: FaLinkedin, href: "https://www.linkedin.com/in/sujal-patidar-093669357/" },
-              { Icon: SiGithub, href: "https://github.com" },
-              { Icon: SiWhatsapp, href: "https://wa.me/918827039565" },
-            ].map(({ Icon, href }, i) => (
+              { Icon: FaLinkedin, href: "https://www.linkedin.com/in/sujal-patidar-093669357/", label: "LinkedIn" },
+              { Icon: SiGithub, href: "https://github.com/Sujal-173", label: "GitHub" },
+              { Icon: SiWhatsapp, href: "https://wa.me/918827039565", label: "WhatsApp" },
+            ].map(({ Icon, href, label }) => (
               <a
-                key={i}
+                key={label}
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={label}
                 className="transition-all duration-200"
                 style={{ color: "#8C8984" }}
                 onMouseEnter={(e) => {
@@ -56,7 +58,7 @@ export function Footer() {
                   (e.currentTarget as HTMLAnchorElement).style.transform = "scale(1)";
                 }}
               >
-                <Icon size={20} />
+                <Icon size={20} aria-hidden="true" />
               </a>
             ))}
           </div>
@@ -67,7 +69,7 @@ export function Footer() {
           {navLinks.map((link) => (
             <button
               key={link}
-              onClick={() => scrollTo(link)}
+              onClick={() => scrollToSection(link.toLowerCase())}
               className="transition-colors duration-200"
               style={{ fontSize: 13, color: "#64748B", background: "none", border: "none", cursor: "pointer" }}
               onMouseEnter={(e) => ((e.currentTarget as HTMLButtonElement).style.color = "#FFFFFF")}
@@ -82,7 +84,7 @@ export function Footer() {
 
         {/* Bottom row */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p style={{ fontSize: 13, color: "#64748B" }}>© 2025 Sujal. All rights reserved.</p>
+          <p style={{ fontSize: 13, color: "#64748B" }}>© 2026 Sujal. All rights reserved.</p>
           <p style={{ fontSize: 13, color: "#64748B" }}>Made with ❤️ in Indore 🇮🇳</p>
         </div>
       </div>

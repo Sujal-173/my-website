@@ -1,26 +1,12 @@
-import { useRef, useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { SectionLabel } from "./SectionLabel";
+import { useVisible } from "../../hooks/useVisible";
 
 const stats = [
   { icon: "🚀", number: "MERN Stack", label: "Full-Stack Dev" },
   { icon: "⚡", number: "5-7 Days", label: "Delivery Time" },
   { icon: "💰", number: "₹5,000+", label: "Starting Price" },
 ];
-
-function useVisible(threshold = 0.2) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-  useEffect(() => {
-    const obs = new IntersectionObserver(
-      ([e]) => { if (e.isIntersecting) setVisible(true); },
-      { threshold }
-    );
-    if (ref.current) obs.observe(ref.current);
-    return () => obs.disconnect();
-  }, [threshold]);
-  return { ref, visible };
-}
 
 export function About() {
   const { ref, visible } = useVisible();
@@ -59,6 +45,7 @@ export function About() {
               <img
                 src="https://res.cloudinary.com/dbkrxzzv1/image/upload/Generated_Image_June_12_2026_-_5_13PM_bhcvgp"
                 alt="Sujal — Freelance Web Developer"
+                loading="lazy"
                 className="w-full object-cover"
                 style={{ aspectRatio: "4/5", display: "block" }}
               />

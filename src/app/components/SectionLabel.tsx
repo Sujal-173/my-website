@@ -1,5 +1,5 @@
-import { useRef, useEffect, useState } from "react";
 import { motion } from "motion/react";
+import { useVisible } from "../../hooks/useVisible";
 
 interface SectionLabelProps {
   label: string;
@@ -9,17 +9,7 @@ interface SectionLabelProps {
 }
 
 export function SectionLabel({ label, title, subtitle, center = false }: SectionLabelProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
-      { threshold: 0.2 }
-    );
-    if (ref.current) obs.observe(ref.current);
-    return () => obs.disconnect();
-  }, []);
+  const { ref, visible } = useVisible(0.2);
 
   return (
     <div ref={ref} className={center ? "text-center" : ""}>

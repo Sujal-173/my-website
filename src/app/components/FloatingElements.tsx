@@ -20,10 +20,11 @@ export function FloatingElements() {
           href="https://wa.me/918827039565"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Chat on WhatsApp"
           className="flex items-center justify-center w-12 h-12 rounded-full"
           style={{ background: "#E8C547", color: "#0C0C0A", textDecoration: 'none' }}
         >
-          <SiWhatsapp size={18} />
+          <SiWhatsapp size={18} aria-hidden="true" />
         </a>
       </div>
 

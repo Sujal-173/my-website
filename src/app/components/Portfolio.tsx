@@ -1,7 +1,17 @@
 import { motion } from "motion/react";
 import { SectionLabel } from "./SectionLabel";
 
-const projects = [
+interface Project {
+  title: string;
+  type: string;
+  desc: string;
+  tech: string[];
+  img: string;
+  large: boolean;
+  website?: string;
+}
+
+const projects: Project[] = [
   {
     title: "Yashraj Palace",
     type: "Hotel Website",
@@ -33,7 +43,7 @@ function ProjectCard({
   project,
   delay,
 }: {
-  project: (typeof projects)[0];
+  project: Project;
   delay: number;
 }) {
   return (
@@ -51,6 +61,7 @@ function ProjectCard({
       <img
         src={project.img}
         alt={project.title}
+        loading="lazy"
         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
       />
 
@@ -104,16 +115,33 @@ function ProjectCard({
             </span>
           ))}
         </div>
-        <a href={project.website} target="_blank" rel="noopener noreferrer"
-          className="self-start px-[18px] py-2 rounded-[8px] text-white font-semibold"
-          style={{
-            background: "linear-gradient(135deg, #6C63FF, #00D4FF)",
-            fontSize: 13,
-            fontFamily: "'Inter', sans-serif",
-          }}
-        >
-          View Live ↗
-        </a>
+
+        {/* Only render the link if a website URL exists */}
+        {project.website ? (
+          <a
+            href={project.website}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="self-start px-[18px] py-2 rounded-[8px] text-white font-semibold"
+            style={{
+              background: "linear-gradient(135deg, #6C63FF, #00D4FF)",
+              fontSize: 13,
+              fontFamily: "'Inter', sans-serif",
+            }}
+          >
+            View Live ↗
+          </a>
+        ) : (
+          <span
+            style={{
+              fontSize: 13,
+              color: "#4A4845",
+              fontFamily: "'JetBrains Mono', monospace",
+            }}
+          >
+            🔒 Coming Soon
+          </span>
+        )}
       </div>
 
       {/* Type badge — always visible */}

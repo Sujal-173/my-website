@@ -4,29 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sujal Patidar | Freelance Web Developer in Indore</title>
-    <meta 
-    name="description"
-    content="Freelance Web Developer in Indore. I build modern websites for hotels, restaurants, shops and local businesses that help attract more customers."
-     />
+    <meta
+      name="description"
+      content="Freelance Web Developer in Indore. I build modern websites for hotels, restaurants, shops and local businesses that help attract more customers."
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Sujal Patidar | Freelance Web Developer" />
+    <meta property="og:description" content="Modern websites for hotels, restaurants and businesses." />
+    <meta property="og:image" content="https://buildwithsujal.vercel.app/og-image.png" />
+    <meta property="og:url" content="https://buildwithsujal.vercel.app" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sujal Patidar | Freelance Web Developer" />
+    <meta name="twitter:description" content="Modern websites for hotels, restaurants and businesses in Indore." />
+    <meta name="twitter:image" content="https://buildwithsujal.vercel.app/og-image.png" />
+
+    <!-- SEO -->
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://buildwithsujal.vercel.app" />
     <meta
       name="google-site-verification"
       content="K3ryoJP69AMuKwoOGsfPziZ-GlQrkmhMclWCReiY-fo"
     />
-    <meta name="robots" content="index, follow" />      
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-2SGNW4P1K0"
-    ></script>
+
+    <!-- Google Analytics (single instance) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2SGNW4P1K0"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
+      function gtag() { dataLayer.push(arguments); }
       gtag("js", new Date());
-
       gtag("config", "G-2SGNW4P1K0");
     </script>
+
     <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
@@ -40,37 +52,27 @@
         f.parentNode.insertBefore(j, f);
       })(window, document, "script", "dataLayer", "GTM-P8NSN7WK");
     </script>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2SGNW4P1K0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-2SGNW4P1K0');
-</script>
-    <!-- End Google Tag Manager -->
     <style>
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-      }
-      #root {
-        height: 100%;
-      }
+      html, body { height: 100%; margin: 0; }
+      #root { height: 100%; }
     </style>
   </head>
 
   <body>
-     <noscript
-      ><iframe
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-P8NSN7WK"
         height="0"
         width="0"
         style="display: none; visibility: hidden"
-      ></iframe
-    ></noscript>
+      ></iframe>
+      <p style="padding:24px;text-align:center;color:#fff;background:#0A0A0F;font-family:sans-serif">
+        This site works best with JavaScript enabled.
+      </p>
+    </noscript>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

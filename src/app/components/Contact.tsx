@@ -184,7 +184,10 @@ export function Contact() {
         setError("Something went wrong. Please try WhatsApp directly.");
       }
     } catch (err) {
-      console.error("EmailJS error:", err);
+      // Only log in development — never leak error details to production console
+      if (import.meta.env.DEV) {
+        console.error("EmailJS error:", err);
+      }
       setError("Failed to send. Please reach out via WhatsApp.");
     } finally {
       setLoading(false);
@@ -421,50 +424,68 @@ export function Contact() {
               <div
                 style={{ display: "flex", flexDirection: "column", gap: 12 }}
               >
-                {/* Row 1: Name + Business */}
+                {/* Row 1: Name + Business — collapses to 1-col on small screens */}
                 <div
                   style={{
                     display: "grid",
-                    gridTemplateColumns: "1fr 1fr",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
                     gap: 12,
                   }}
                 >
                   <input
+                    id="contact-name"
+                    type="text"
                     style={baseInputStyle}
                     placeholder="Full Name *"
+                    aria-label="Full Name"
+                    autoComplete="name"
                     {...field("name")}
                   />
                   <input
+                    id="contact-business"
+                    type="text"
                     style={baseInputStyle}
                     placeholder="Business Name"
+                    aria-label="Business Name"
+                    autoComplete="organization"
                     {...field("business")}
                   />
                 </div>
 
-                {/* Row 2: Phone + Email */}
+                {/* Row 2: Phone + Email — collapses to 1-col on small screens */}
                 <div
                   style={{
                     display: "grid",
-                    gridTemplateColumns: "1fr 1fr",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
                     gap: 12,
                   }}
                 >
                   <input
+                    id="contact-phone"
+                    type="tel"
                     style={baseInputStyle}
                     placeholder="WhatsApp Number *"
+                    aria-label="WhatsApp Number"
                     maxLength={10}
+                    autoComplete="tel"
+                    inputMode="numeric"
                     {...field("phone")}
                   />
                   <input
+                    id="contact-email"
+                    type="email"
                     style={baseInputStyle}
                     placeholder="Email Address *"
-                    type="email"
+                    aria-label="Email Address"
+                    autoComplete="email"
                     {...field("email")}
                   />
                 </div>
 
-                {/* Row 3: Service — full width, own row (FIX: was crammed in 2-col grid) */}
+                {/* Row 3: Service — full width */}
                 <select
+                  id="contact-service"
+                  aria-label="Service Needed"
                   style={{
                     ...baseInputStyle,
                     color: form.service ? "#F0EDE8" : "#4A4845",
@@ -482,6 +503,8 @@ export function Contact() {
 
                 {/* Row 4: Message */}
                 <textarea
+                  id="contact-message"
+                  aria-label="Message"
                   style={
                     {
                       ...baseInputStyle,
@@ -550,10 +573,6 @@ export function Contact() {
         @keyframes pulse {
           0%, 100% { opacity: 1; }
           50%       { opacity: 0.35; }
-        }
-        @media (max-width: 700px) {
-          #contact-grid { flex-direction: column !important; }
-          #contact-grid > * { flex: unset !important; width: 100% !important; }
         }
       `}</style>
     </section>
