@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://buildwithsujal.vercel.app/sitemap.xml
