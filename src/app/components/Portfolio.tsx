@@ -19,7 +19,7 @@ const projects: Project[] = [
     tech: ["Next.js", "Tailwind", "Vercel"],
     img: "https://plus.unsplash.com/premium_photo-1661964071015-d97428970584?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aG90ZWx8ZW58MHx8MHx8fDA%3D",
     large: true,
-    website: "https://yashrajpalace.netlify.app/",
+    website: "https://yashraj-palace.vercel.app/",
   },
   {
     title: "Hotel Narmada Residency",
